@@ -1,0 +1,63 @@
+<!doctype html >
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title><%= Refinery::Core.site_name %></title>
+    
+    <!-- Keywords and Meta -->
+    <meta name="keywords" content="---" />
+    <meta name="description" content="---">
+    <meta name="author" content="Backend with collaboration of The Design Pill">
+    <!-- Keywords and Meta -->
+
+    
+    <!-- Web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,500italic,400italic,700,700italic%7CRoboto+Condensed:400,700%7CRoboto+Slab' rel='stylesheet' type='text/css'>
+    <!-- End web fonts -->
+
+    <!-- Start stylesheets -->
+    
+    <!-- End:stylesheets -->
+
+ 	 <!-- Hack for the stupid IE -->
+   <!--[if lte IE 8]>
+    <script src="assets/js/respond.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="assets/css/photobox.ie.css">
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+		
+		<!-- End hack -->
+</head>
+
+
+
+
+<!DOCTYPE html>
+<%= render "/refinery/html_tag" %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
+  <head>
+    <%= render "/refinery/head" %>
+  </head>
+  <body id="<%= canonical_id @page %>">
+    <%= site_bar -%>
+    <div id="page_container">
+      <header id="header">
+        <%= render "/refinery/header" -%>
+      </header>
+      <section id="page">
+        <%= yield %>
+      </section>
+      <footer>
+        <%= render "/refinery/footer" -%>
+      </footer>
+    </div>
+    <%= render "/refinery/javascripts" %>
+  </body>
+</html>
